@@ -17,7 +17,7 @@ export default function Addeditem() {
     if (data.length == 0) {
         return (
             <>
-                <div>
+                <div className="min">
                     <h1 className="cdp d-flex justify-content-center">No Item added</h1>
                 </div>
             </>
@@ -27,6 +27,7 @@ export default function Addeditem() {
     return (
         <>
         <Toaster/>
+        <div className="min">
             <div className="tb container mt-5">
                 <div className="row">
                     <div className="col-lg">
@@ -39,6 +40,7 @@ export default function Addeditem() {
                                     <th scope="col">Price</th>
                                     <th scope="col">Discount</th>
                                     <th scope="col">Discount Price</th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,6 +53,7 @@ export default function Addeditem() {
                                             <td>{item.price}</td>
                                             <td>{item.discount}%</td>
                                             <td>{item.discound_price}</td>
+                                            <td>
                                             <button onClick={() => {
                                                 let cnf = confirm("are you want to remove it !")
                                                 if (cnf) {
@@ -61,6 +64,7 @@ export default function Addeditem() {
                                                     })
                                                 }
                                             }} className="btn btn-danger text-dark" >Delete</button>
+                                            </td>
                                         </tr>
                                     ))
                                 }
@@ -68,6 +72,7 @@ export default function Addeditem() {
                         </table>
                     </div>
                 </div>
+            </div>
             </div>
         </>
     );

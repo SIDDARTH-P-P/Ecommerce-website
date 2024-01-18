@@ -33,7 +33,7 @@ function Login() {
     return (
         <>
         <Toaster/>
-            <div className="login-page">
+            <div className="login-page min">
                 <div onSubmit={formik.handleSubmit} className="form">
                     <form  className="login-form">
                         <input {...formik.getFieldProps("username")} type="text" name="username" placeholder="username" />

@@ -4,7 +4,7 @@ import { Addproducts } from "../helpers/request";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function Additem() {
+function Additem({ setData, data }) {
     const navigate = useNavigate()
     let token = localStorage.getItem("token");
     function data(event) {
@@ -13,9 +13,9 @@ function Additem() {
         formdata.append("discound_price", dis())
         let response = Addproducts(formdata, token)
         response.then(res => {
-            console.log(res.data);
             navigate("/")
-            toast(res.data)
+            toast(res.data.msg)
+            setData([...data, res.data.data])
         })
     }
     function dis() {

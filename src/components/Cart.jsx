@@ -1,21 +1,26 @@
-import { GetDatas } from "../helpers/request";
 import { Link } from "react-router-dom";
 import "./cart.css"
-
-export default function Card({data}) {
-    const [{ Loading, status, apiData, error }] = GetDatas(`/api/products`)
-    console.log(data);
+export default function Card({ data }) {
+    if(data?.length == 0){
+        return(
+            <>
+            <div className="d-flex justify-content-center min">
+            <h1>Item not found !</h1>
+            </div>
+            </>
+        )
+    }
     return (
         <>
             {
-             data?.map((item, index) => (
+                data?.map((item, index) => (
                     <Body key={index}>
                         <Link to={`/details/${item._id}`}>
-                            <div className="card mt-5" style={{ width: "18rem" }}>
+                            <div className="card">
                                 <img src={`http://localhost:3000/api/get_file/${item.image[0].filename}`} className="d-block w-100" alt="..." />
                                 <div className="card-body">
-                                    <h5 className="card-title">{item.name}</h5>
-                                    <p>${item.discound_price}</p>
+                                    <h5 className="card-title text text-dark">{item.name}</h5>
+                                    <p className="text-decoration-none">${item.discound_price}</p>
                                 </div>
                             </div>
                         </Link>
@@ -29,20 +34,8 @@ export default function Card({data}) {
 
 function Body({ children }) {
     return (
-        <div className="col-lg-3">
+        <div className="col-lg-3 col-sm-6 col-md-4 col-6">
             {children}
         </div>
     )
 }
-
-
-
-
-
-// {
-//     item.image?.map((img, index) => (
-//         <div key={index} className="carousel-item active">
-//             <img src={`http://localhost:3000/api/get_file/${img.filename}`} className="d-block w-100" alt="..." />
-//         </div>
-//     ))
-// }

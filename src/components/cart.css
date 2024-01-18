@@ -10,7 +10,6 @@
 }
 .card img{
     border-radius: 10px 10px 0px 0px;
-    width: 100px;
     height: 200px;
 }
 
@@ -31,4 +30,40 @@
     box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
     border-radius: 10px  10px 10px 10px;
   }
+}
+.card{
+  width: 14rem;
+}
+
+@media (min-width:900px) and (max-width:1700px){
+  .card img{
+    border-radius: 10px 10px 0px 0px;
+    width: 100px;
+    height: 200px;
+}
+.card{
+  margin-top: 3rem;
+}
+}
+
+@media (min-width:100px) and (max-width:530px){
+  .card img{
+    border-radius: 10px 10px 0px 0px;
+    height: 100px;
+}
+.card{
+  width: 12rem;
+}
+.card-body{
+  width: 100px;
+  height: 90px;
+}
+}
+
+.text{
+  text-decoration: none;
+}
+
+.min{
+  min-height: 80vh;
 }

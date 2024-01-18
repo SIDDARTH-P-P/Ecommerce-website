@@ -8,7 +8,7 @@ export default function Profile() {
         const [{ Loading, status, apiData, error }] = getprofile(token)
         return (
             <>
-                <div className="wrapper">
+                <div className="wrapper min">
                     <form className="form-signin ht">
                         <div className="container">
                             <div className="image">

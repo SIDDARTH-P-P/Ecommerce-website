@@ -22,6 +22,7 @@ export default function Details() {
         <>
             <Toaster />
             {
+                <div className="min">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4">
@@ -38,6 +39,7 @@ export default function Details() {
                             <h2><span>$ {apiData?.discound_price}</span> <span className="fs-4 ms-4"> <strike> $ {apiData?.price} </strike></span></h2>
                         </div>
                     </div>
+                </div>
                 </div>
             }
         </>

@@ -10,6 +10,7 @@ import Card_page from "./page/cart_page";
 import Addeditem from "./page/addeditem";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import Footer from "./components/footer";
 config()
 
 function App() {
@@ -21,13 +22,14 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home data={data} />} />
                         <Route path="/details/:id" element={<Details />} />
-                        <Route path="additem" element={<Additem />} />
+                        <Route path="additem" element={<Additem setData={setData} data={data}/>} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/profile" element={<Profile/>}/>
                         <Route path="/card" element={<Card_page/>}/>
                         <Route path="/addeditem" element={<Addeditem/>} />
                     </Routes>
+                    <Footer/>
                 </BrowserRouter>
         </>
     );

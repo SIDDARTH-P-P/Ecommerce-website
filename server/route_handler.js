@@ -70,7 +70,7 @@ export async function products(req, res) {
             description,
             userid: id
         })
-        res.status(200).json("successfully added")
+        res.status(200).json({msg: "successfully added", data })
     } catch (error) {
         console.log(error);
     }
